@@ -1,0 +1,89 @@
+Mahindra Fianance Assignment
+
+1. User Details Table - 
+
+-- public.user_details definition
+
+-- Drop table
+
+-- DROP TABLE public.user_details;
+
+CREATE TABLE public.user_details (
+	id bigserial NOT NULL,
+	"name" varchar(100) NOT NULL,
+	email varchar(255) NOT NULL,
+	"password" varchar(255) NOT NULL,
+	CONSTRAINT user_details_pkey PRIMARY KEY (id)
+);
+
+Insert dummy data - 
+
+INSERT INTO public.user_details
+(id, "name", email, "password")
+VALUES(1, 'Sushant', 'sushshukla19@gmail.com', 'sush123');
+INSERT INTO public.user_details
+(id, "name", email, "password")
+VALUES(2, 'Gauri', 'gauri123@gmail.com', 'gauri123');
+INSERT INTO public.user_details
+(id, "name", email, "password")
+VALUES(3, 'Gauri Shukla', 'gaurishukla@gmail.com', 'gauri644');
+INSERT INTO public.user_details
+(id, "name", email, "password")
+VALUES(4, 'Kalyani Shukla', 'kalyanishukla@gmail.com', 'kalyanis');
+INSERT INTO public.user_details
+(id, "name", email, "password")
+VALUES(6, 'Kalyani Test', 'kalyanishukla34@gmail.com', 'kalyanisrt');
+
+
+
+
+2. Advisor Table
+
+-- public.advisor definition
+
+-- Drop table
+
+-- DROP TABLE public.advisor;
+
+CREATE TABLE public.advisor (
+	advisor_id bigserial NOT NULL,
+	"name" varchar(255) NULL,
+	photo_url varchar(255) NULL,
+	CONSTRAINT advisor_pkey PRIMARY KEY (advisor_id)
+);
+
+Insert Dummy Data
+
+INSERT INTO public.advisor
+(advisor_id, "name", photo_url)
+VALUES(1, 'test4', 'test/test5.jpg');
+
+
+
+3. Advisor Booking table 
+-- public.advisor_booking definition
+
+-- Drop table
+
+-- DROP TABLE public.advisor_booking;
+
+CREATE TABLE public.advisor_booking (
+	advisor_booking_id serial4 NOT NULL,
+	advisor_id int8 NULL,
+	booking_time varchar(255) NULL,
+	CONSTRAINT advisor_booking_pkey PRIMARY KEY (advisor_booking_id),
+	CONSTRAINT advisor_id_un UNIQUE (advisor_id)
+);
+
+
+-- public.advisor_booking foreign keys
+
+ALTER TABLE public.advisor_booking ADD CONSTRAINT advisor_booking_fk FOREIGN KEY (advisor_id) REFERENCES public.advisor(advisor_id);
+
+
+
+Insert Dummy 
+
+INSERT INTO public.advisor_booking
+(advisor_booking_id, advisor_id, booking_time)
+VALUES(1, 1, '2017-11-02 02:36:57.204');

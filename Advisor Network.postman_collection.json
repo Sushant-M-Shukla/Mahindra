@@ -1,0 +1,256 @@
+{
+	"info": {
+		"_postman_id": "8dea2de2-0090-4a3c-a6ea-e201ed893fb7",
+		"name": "Advisor Network",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22785069"
+	},
+	"item": [
+		{
+			"name": "Add new advisor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "roleName",
+						"value": "admin",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"test4\",\n    \"photoUrl\": \"test/test5.jpg\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/admin/advisor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"admin",
+						"advisor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "roleName",
+						"value": "user"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=264503585F8EFD396D4A61406E6B4FB6"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Kalyani Test\",\n    \"email\": \"kalyanishukla34@gmail.com\",\n    \"password\": \"kalyanisrt\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "roleName",
+						"value": "user"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=264503585F8EFD396D4A61406E6B4FB6; JSESSIONID=264503585F8EFD396D4A61406E6B4FB6"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"kalyanishukla34@gmail.com\",\n    \"password\": \"kalyanisrt\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get List of Advisor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "roleName",
+						"value": "user"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=264503585F8EFD396D4A61406E6B4FB6; JSESSIONID=264503585F8EFD396D4A61406E6B4FB6; JSESSIONID=264503585F8EFD396D4A61406E6B4FB6"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/user/6/advisor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"6",
+						"advisor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book Advisor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "roleName",
+						"value": "user"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=264503585F8EFD396D4A61406E6B4FB6; JSESSIONID=264503585F8EFD396D4A61406E6B4FB6; JSESSIONID=264503585F8EFD396D4A61406E6B4FB6; JSESSIONID=264503585F8EFD396D4A61406E6B4FB6"
+					},
+					{
+						"key": "bookingTime",
+						"value": "2017-11-02 02:36:57.204",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/user/6/advisor/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"6",
+						"advisor",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Advisor Booking for user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "roleName",
+						"value": "user"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=264503585F8EFD396D4A61406E6B4FB6; JSESSIONID=264503585F8EFD396D4A61406E6B4FB6; JSESSIONID=264503585F8EFD396D4A61406E6B4FB6; JSESSIONID=264503585F8EFD396D4A61406E6B4FB6; JSESSIONID=264503585F8EFD396D4A61406E6B4FB6"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/user/1/advisor/booking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"1",
+						"advisor",
+						"booking"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
